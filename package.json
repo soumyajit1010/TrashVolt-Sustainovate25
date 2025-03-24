@@ -1,17 +1,15 @@
 {
-  "name": "new-folder",
+  "name": "trashvolt",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server/server.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
-    "chart.js": "^4.4.8",
-    "express": "^4.21.2",
-    "sqlite3": "^5.1.7"
+    "express": "^4.17.1",
+    "sqlite3": "^5.0.2"
+  },
+  "engines": {
+    "node": "18.20.7" 
   }
 }
