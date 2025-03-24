@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard - TrashVolt</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+  <nav>
+    <div class="container mx-auto">
+      <h1>TrashVolt</h1>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="leaderboard.html">Leaderboard</a></li>
+        <li><a href="learn.html">Learn More</a></li>
+        <li><a href="documentation.html">Documentation</a></li>
+      </ul>
+    </div>
+  </nav>
+  <section class="container mx-auto py-8">
+    <h2>Your Dashboard</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="dashboard-card">
+        <h3 class="text-lg">Log Waste</h3>
+        <form id="wasteForm">
+          <select name="type">
+            <option value="organic">Organic</option>
+            <option value="recyclable">Recyclable</option>
+            <option value="non-recyclable">Non-recyclable</option>
+          </select>
+          <input type="number" name="amount" placeholder="Amount (kg)" step="0.1">
+          <button type="submit">Log</button>
+        </form>
+        <div class="mt-4">
+          <label for="wastePhoto" class="block text-sm font-medium">Upload Waste Photo for AI Sorting</label>
+          <input type="file" id="wastePhoto" accept="image/*" class="mt-1 w-full border-2 border-gray-300 rounded p-1">
+        </div>
+        <div id="result" class="mt-4"></div>
+      </div>
+      <div class="dashboard-card">
+        <h3 class="text-lg">Energy Potential</h3>
+        <canvas id="energyChart"></canvas>
+        <p id="points" class="mt-2">Total Points: 0</p>
+      </div>
+    </div>
+    <div class="dashboard-card mt-4">
+      <h3 class="text-lg">Weekly Challenge</h3>
+      <p id="challenge">Log 5 kg of organic waste this week!</p>
+      <p id="challengeStatus">Progress: 0/5 kg</p>
+      <p id="challengeReward" class="text-green-600 hidden">Reward Earned: Green Hero Badge + 50 Points!</p>
+    </div>
+    <!-- New Carbon Footprint Tracker -->
+    <div class="dashboard-card mt-4">
+      <h3 class="text-lg">Your Carbon Savings</h3>
+      <p id="carbonSaved" class="text-2xl font-bold">0 kg CO2</p>
+    </div>
+    <div id="challengeModal" class="modal hidden">
+      <div class="modal-content">
+        <h3 class="text-xl font-bold text-green-600">Congratulations, Green Hero!</h3>
+        <p class="mt-2">You’ve logged 5 kg of organic waste and earned the <strong>Green Hero Badge</strong> + 50 bonus points!</p>
+        <div class="mt-4 text-center">
+          <span class="text-4xl">🏆</span>
+        </div>
+        <button id="closeModal" class="mt-4 bg-green-600 text-white p-2 rounded">Claim Reward</button>
+      </div>
+    </div>
+  </section>
+  <script src="js/script.js"></script>
+</body>
+</html>
