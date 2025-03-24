@@ -34,6 +34,12 @@ Follow these steps to run TrashVolt locally:
 - [Node.js](https://nodejs.org/) (v16 or higher)
 - npm (installed with Node.js)
 
+## Demo Video
+Watch the full demo here: https://youtu.be/EENFycjCsJg
+
+## Deployment
+Live demo: https://trashvolt-sustainovate25-1.onrender.com
+
 ### Setup
 1. **Clone the Repository**:
    ```bash
