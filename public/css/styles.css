@@ -1,0 +1,276 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3e0dc 100%);
+  color: #333;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+nav {
+  background: linear-gradient(to right, #2d6a4f, #40916c);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 1rem 0;
+}
+
+nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+}
+
+nav h1 {
+  font-size: 1.5rem;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #d8f3dc;
+}
+
+button,
+.btn {
+  background: #40916c;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  width: 100%;
+}
+
+button:hover,
+.btn:hover {
+  background: #52796f;
+  transform: scale(1.05);
+}
+
+h2 {
+  color: #2d6a4f;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  width: 50px;
+  height: 4px;
+  background: #74c69d;
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+}
+
+.home-section {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #2d6a4f;
+  padding: 2rem;
+}
+
+.home-section h2 {
+  font-size: 2.5rem;
+}
+
+.home-section p {
+  font-size: 1.25rem;
+  max-width: 600px;
+}
+
+.dashboard-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  width: 100%;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+form input,
+form select {
+  border: 2px solid #95d5b2;
+  border-radius: 6px;
+  padding: 8px;
+  width: 100%;
+}
+
+form input:focus,
+form select:focus {
+  border-color: #40916c;
+  outline: none;
+}
+
+#result {
+  color: #52796f;
+  font-weight: 600;
+  text-align: center;
+}
+
+#leaderboard p {
+  padding: 10px;
+  border-bottom: 1px solid #e9ecef;
+  text-align: left;
+}
+
+#leaderboard p:hover {
+  background: #f1faee;
+}
+
+#leaderboard p:first-child {
+  background: #ffd700;
+  font-weight: bold;
+}
+
+#leaderboard p:nth-child(2) {
+  background: #c0c0c0;
+}
+
+#leaderboard p:nth-child(3) {
+  background: #cd7f32;
+}
+
+.learn-section {
+  background: #f1faee;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+  text-align: left;
+}
+
+.learn-section p {
+  color: #52796f;
+}
+
+#wastePhoto {
+  border-color: #95d5b2;
+}
+
+#wastePhoto:focus {
+  border-color: #40916c;
+  outline: none;
+}
+
+#challenge {
+  font-weight: 600;
+  color: #2d6a4f;
+}
+
+#challengeStatus {
+  color: #52796f;
+}
+
+#challengeReward {
+  font-weight: 600;
+}
+
+#aiFeedback {
+  background: #e5e7eb;
+  color: #374151;
+  transition: background 0.3s ease;
+}
+
+#aiFeedback:hover {
+  background: #d1d5db;
+}
+
+/* New Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  animation: popIn 0.3s ease-out;
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.modal.hidden {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  nav .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+
+  .home-section h2 {
+    font-size: 1.75rem;
+  }
+
+  .home-section p {
+    font-size: 1rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-card {
+    margin-bottom: 1rem;
+  }
+}
